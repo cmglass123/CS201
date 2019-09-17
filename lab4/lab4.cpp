@@ -10,6 +10,9 @@ using std::endl;
 
 int main()
 {
+	std::ofstream ofile("lab4.txt");
+
+	std::ifstream ifile("lab4.txt");
 
 }
 
