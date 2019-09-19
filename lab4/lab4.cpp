@@ -1,7 +1,12 @@
-// lab4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*
+Lab #4
+Christopher Glass
+9/17/2019
+making a text file that has the line of text printed out by how many times user wants
+*/
 
 #include <iostream>
+#include <string>
 #include <fstream>
 #include <sstream>
 using std::cout;
@@ -12,6 +17,8 @@ int main()
 {
 	int times;
 	std::string word;
+	std::string stimes;
+
 
 	std::ofstream ofile("lab4.txt");
 
@@ -19,19 +26,22 @@ int main()
 	
 	if (ifile)
 	{
-		cout << "enter a number and a word: ";
-		cin >> times;
+		cout << "Enter a number: ";
+		std::getline(cin, stimes);
+		std::istringstream uin(stimes);
+		uin >> times;
+		cout << "Enter a line of text:";
 		std::getline(cin, word);
 
-		for (int x = 0; x <= times; x++)
+		for (int x = 0; x < times; x++)
 		{
-			ifile >> word;
+			ofile << word << endl;
 		}
-		ofile << word;
+
 	}
 	else
 	{
-		cout << "unable to open file try again!\n";
+		cout << "Unable to open file try again!\n";
 	}
 	return 0;
 }
