@@ -17,15 +17,22 @@ int main()
 
 	std::ifstream ifile("lab4.txt");
 	
-	cout << "enter a number and a word: ";
-	cin >> times;
-	cin >> word;
-
-	for (int x = 0; x >= times; x++)
+	if (ifile)
 	{
-		ifile >> word;
-	}
-	ofile << word;
+		cout << "enter a number and a word: ";
+		cin >> times;
+		std::getline(cin, word);
 
+		for (int x = 0; x <= times; x++)
+		{
+			ifile >> word;
+		}
+		ofile << word;
+	}
+	else
+	{
+		cout << "unable to open file try again!\n";
+	}
+	return 0;
 }
 
