@@ -20,7 +20,7 @@ int main()
 	std::string stimes;
 
 
-	std::ofstream ofile("lab4.txt");
+	std::ofstream ofile("lab4.txt",std::ios::app);
 
 	std::ifstream ifile("lab4.txt");
 	
