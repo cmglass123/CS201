@@ -26,6 +26,8 @@ int main()
 	
 	if (ifile)
 	{
+		cout << ifile.rdbuf();
+
 		cout << "Enter a number: ";
 		std::getline(cin, stimes);
 		std::istringstream uin(stimes);
