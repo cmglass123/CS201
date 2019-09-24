@@ -18,7 +18,7 @@ using std::ifstream;
 
 int main()
 {
-	ifstream opFile("data.dat", std::ios::out | std::ios::binary);
+	ifstream opFile("data.dat", std::ios::in | std::ios::binary);
 
 	if (opFile)
 	{
@@ -26,12 +26,11 @@ int main()
 		int fileLength = opFile.tellg();
 		opFile.seekg(0, opFile.beg);
 
-		char * length = new char[fileLength];
+		//char * length = new char[fileLength];
 
-		opFile.read(length,fileLength);
+		opFile.read(reinterpret_cast<char *>(&fileLength), sizeof(int));
 
-		cout.write(reinterpret_cast<const char*>(&fileLength), sizeof(fileLength));
-
+		cout << fileLength << endl;
 	}
 	return 0;
 }
