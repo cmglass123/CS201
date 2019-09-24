@@ -18,6 +18,10 @@ int main()
 
 	if (opFile)
 	{
+		opFile.seekg(0, opFile.end);
+		int fileLength = opFile.tellg();
+		opFile.seekg(0, opFile.beg);
+
 		
 	}
 }
