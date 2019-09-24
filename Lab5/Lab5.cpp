@@ -14,5 +14,10 @@ using std::ifstream;
 
 int main()
 {
+	ifstream opFile("data.dat",std::ios::binary);
 
+	if (opFile)
+	{
+		
+	}
 }
