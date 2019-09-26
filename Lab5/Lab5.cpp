@@ -22,17 +22,32 @@ int main()
 
 	if (opFile)
 	{
-		opFile.seekg(sizeof(int));
-		//opFile.seekg(0, opFile.end);
+		opFile.seekg(0, opFile.end);
 		int fileLength = opFile.tellg();
-		//opFile.seekg(0, opFile.beg);
+		opFile.seekg(0, opFile.beg);
 
-		//char * length = new char[fileLength];
+		int count = 0;
+		int total = 0;
+		int average;
 
-		opFile.read(reinterpret_cast<char *>(&fileLength), sizeof(int));
+		while (opFile) 
+		{
+			int currentNum;
+			opFile.read(reinterpret_cast<char*>(&currentNum), sizeof(int));
+			total += currentNum;
+			count++;
 
-		cout << fileLength << endl;
-		
+			if (!opFile)
+			{
+				break;
+			}
+			
+		}
+
+		cout << total  << endl;
+		cout << count << endl;
+		cout << double (double(total) / count) << endl;
+
 	}
 	return 0;
 }
