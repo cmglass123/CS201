@@ -22,15 +22,17 @@ int main()
 
 	if (opFile)
 	{
-		opFile.seekg(0, opFile.end);
+		opFile.seekg(sizeof(int));
+		//opFile.seekg(0, opFile.end);
 		int fileLength = opFile.tellg();
-		opFile.seekg(0, opFile.beg);
+		//opFile.seekg(0, opFile.beg);
 
 		//char * length = new char[fileLength];
 
 		opFile.read(reinterpret_cast<char *>(&fileLength), sizeof(int));
 
 		cout << fileLength << endl;
+		
 	}
 	return 0;
 }
