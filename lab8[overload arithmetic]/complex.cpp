@@ -7,7 +7,7 @@ Complex::Complex() :_real(12.56), _imag(23.50)
 Complex::~Complex()
 {}
 
-double Complex::getDouble()
+double Complex::getDouble() const
 {
 	return _real;
 	return _imag;

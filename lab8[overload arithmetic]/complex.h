@@ -8,7 +8,7 @@ class Complex
 public:
 	Complex();
 	~Complex();
-	double getDouble();
+	double getDouble() const;
 
 private:
 	double _real;
