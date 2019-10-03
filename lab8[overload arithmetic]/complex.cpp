@@ -18,3 +18,17 @@ std::ostream & operator<<(std::ostream & output, const Complex & c)
 	output << c.getDouble();
 	return output;
 }
+
+Complex operator+(const Complex& lhs, const Complex& rhs)
+{
+	Complex temp{ lhs };
+	temp += rhs;
+	return temp;
+}
+
+Complex& Complex::operator+=(const Complex& rhs)
+{
+	_real += rhs._real;
+	_imag += rhs._imag;
+	return *this;
+}

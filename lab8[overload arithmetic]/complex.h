@@ -9,6 +9,7 @@ public:
 	Complex();
 	~Complex();
 	double getDouble() const;
+	Complex & operator+=(const Complex& rhs);
 
 private:
 	double _real;
@@ -17,6 +18,6 @@ private:
 
 std::ostream & operator<<(std::ostream &, const Complex &);
 
-
+Complex operator+(const Complex &, const Complex &);
 
 #endif // !COMPLEX_HPP_
