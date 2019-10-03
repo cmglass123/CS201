@@ -6,10 +6,14 @@
 class Complex
 {
 public:
+
+	Complex(double);
+	Complex(double, double);
 	Complex();
 	~Complex();
-	double getDouble() const;
-	Complex & operator+=(const Complex& rhs);
+	double getReal() const;
+	double getImag() const;
+	Complex & operator+=(const Complex & rhs);
 
 private:
 	double _real;
