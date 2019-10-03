@@ -5,7 +5,9 @@
 
 class Test
 {
+
 friend std::ostream& operator<<(std::ostream& output, const Test& t);
+
 public:
 	Test();
 
@@ -14,9 +16,5 @@ public:
 private:
 	int _num;
 };
-
-
-
-
 
 #endif // !TEST_HPP_
