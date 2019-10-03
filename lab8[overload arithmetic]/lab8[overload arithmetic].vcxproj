@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="complex.cpp" />
     <ClCompile Include="lab8[overload arithmetic].cpp" />
   </ItemGroup>
   <ItemGroup>

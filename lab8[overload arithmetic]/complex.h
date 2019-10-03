@@ -8,11 +8,11 @@ class Complex
 public:
 	Complex();
 	~Complex();
-	void getDouble(double);
+	double getDouble();
 
 private:
-	double _firVal;
-	double _secVal;
+	double _real;
+	double _imag;
 };
 
 std::ostream & operator<<(std::ostream &, const Complex &);
