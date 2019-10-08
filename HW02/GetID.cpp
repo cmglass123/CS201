@@ -25,6 +25,25 @@ int getIdfromFile(string fileName, istringstream& is, ostringstream& os)
 		return -1;
 	}
 
+	string line;
+	string name;
+	string getsName;
 
+	while (getline(input, line))
+	{
+		istringstream rows(line);
+		is >> name;
+
+		int numbers;
+		getline(rows, getsName, ' ');
+
+		if (getsName == name)
+		{
+			rows >> numbers;
+			os << numbers;
+			break;
+		}
+
+	}
 
 }
