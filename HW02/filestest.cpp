@@ -7,7 +7,8 @@
 
 // Includes for code to be tested
 #include "hw1.h"
-#include "hw1.h"   // Double inclusion test
+#include "hw1.h" // Double inclusion test
+#include "hw1.cpp"
 
 // Includes for testing package & code common to all test programs
 #include <iostream>     // for std::cout, std::endl, std::cin
@@ -179,7 +180,7 @@ void test_getIdFromFile(Tester & t)
    std::cout << "Tests with file having final newline:" << std::endl;
    std::ostringstream os; // Holds output
    std::istringstream is; // Holds input to getIdFromFile
-   string expectedOut;
+   std::string expectedOut;
    int res;
 
    os.clear();
@@ -187,7 +188,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("sclaus\n");
    expectedOut="12\n";
-   res = getIdFromFile("users.txt",is,os);
+   res = getIdfromFile("users.txt",is,os);
    t.test(res==0, "getIdFromFile return, file exists");
    t.test(os.str() == expectedOut, "getIdFromFile output, one name, in file");
 
@@ -196,7 +197,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("jblack\nsclaus\n");
    expectedOut="12\n";
-   res = getIdFromFile("notthere.dat",is,os);
+   res = getIdfromFile("notthere.dat",is,os);
    t.test(res==-1, "getIdFromFile return, can't open file");
 
    os.clear();
@@ -204,7 +205,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("jblack\nsclaus\n");
    expectedOut="179\n12\n";
-   getIdFromFile("users.txt",is,os);
+   getIdfromFile("users.txt",is,os);
    t.test(os.str() == expectedOut, "getIdFromFile output, two names, in file");
 
    os.clear();
@@ -212,7 +213,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("sclaus\nofnord\njblack");
    expectedOut="12\nerror\n179\n";
-   getIdFromFile("users.txt",is,os);
+   getIdfromFile("users.txt",is,os);
    t.test(os.str() == expectedOut, "getIdFromFile output, three names, one not in file");
 
    os.clear();
@@ -220,7 +221,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("dadams\njstalin\nsjobs\njstalin\netel\njgalt\nsclaus\n");
    expectedOut="42\n666\n123\n666\nerror\n0\n12\n";
-   getIdFromFile("users.txt",is,os);
+   getIdfromFile("users.txt",is,os);
    t.test(os.str() == expectedOut, "getIdFromFile output, several names, some repeated or out of order or not in file");
 
    std::cout << "Tests with file NOT having final newline:" << std::endl;
@@ -229,7 +230,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("sclaus\n");
    expectedOut="12\n";
-   res = getIdFromFile("users2.txt",is,os);
+   res = getIdfromFile("users2.txt",is,os);
    t.test(res==0, "getIdFromFile return, file exists");
    t.test(os.str() == expectedOut, "getIdFromFile output, one name, in file");
 
@@ -238,7 +239,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("jblack\nsclaus\n");
    expectedOut="12\n";
-   res = getIdFromFile("notthere.dat",is,os);
+   res = getIdfromFile("notthere.dat",is,os);
    t.test(res==-1, "getIdFromFile return, can't open file");
 
    os.clear();
@@ -246,7 +247,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("jblack\nsclaus\n");
    expectedOut="179\n12\n";
-   getIdFromFile("users2.txt",is,os);
+   getIdfromFile("users2.txt",is,os);
    t.test(os.str() == expectedOut, "getIdFromFile output, two names, in file");
 
    os.clear();
@@ -254,7 +255,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("sclaus\nofnord\njblack");
    expectedOut="12\nerror\n179\n";
-   getIdFromFile("users2.txt",is,os);
+   getIdfromFile("users2.txt",is,os);
    t.test(os.str() == expectedOut, "getIdFromFile output, three names, one not in file");
 
    os.clear();
@@ -262,7 +263,7 @@ void test_getIdFromFile(Tester & t)
    is.clear();
    is.str("dadams\njstalin\nsjobs\njstalin\netel\njgalt\nsclaus\n");
    expectedOut="42\n666\n123\n666\nerror\n0\n12\n";
-   getIdFromFile("users2.txt",is,os);
+   getIdfromFile("users2.txt",is,os);
    t.test(os.str() == expectedOut, "getIdFromFile output, several names, some repeated or out of order or not in file");
 }
 
@@ -270,7 +271,7 @@ void test_numberChase(Tester & t)
 {
 std::cout << "TESTS FOR numberChase" << std::endl;
 std::ostringstream os; // Holds output
-string expectedOut;
+std::string expectedOut;
 
 os.clear();
 os.str("");
