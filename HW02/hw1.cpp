@@ -1,5 +1,7 @@
 #include "hw1.h"
 #include <iomanip>
+#include <ios>
+#include <iostream>
 using std::cout;
 using std::cin;
 using std::endl;
@@ -14,7 +16,7 @@ using std::ifstream;
 using std::ofstream;
 using std::getline;
 
-int getIdfromFile(string fileName, istringstream& is, ostringstream& os)
+int getIdfromFile(string fileName, istringstream & is, ostringstream & os)
 {
 	ifstream input;
 
@@ -52,4 +54,26 @@ int getIdfromFile(string fileName, istringstream& is, ostringstream& os)
 	}
 
 	return 0;
+}
+
+void numberChase(std::string filename, std::ostringstream & os)
+{
+	ifstream input(string filename, std::ios::in | std::ios::binary);
+
+	int a = 0;
+
+	while (1 == 1)
+	{
+		input.read(reinterpret_cast<char*>(&a), sizeof(int));
+
+		os << a << endl;
+
+		if (a < 0)
+		{
+			break;
+		}
+
+		input.seekg(a * sizeof(int));
+	}
+
 }

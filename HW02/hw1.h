@@ -4,7 +4,7 @@
 #include<string>
 #include<sstream>
 
-int getIDfromFile(std::string filename, std::istringstream & is, std::ostringstream & os);
+int getIdfromFile(std::string filename, std::istringstream & is, std::ostringstream & os);
 
 void numberChase(std::string filename, std::ostringstream & os);
 
