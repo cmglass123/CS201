@@ -46,4 +46,10 @@ int getIdfromFile(string fileName, istringstream& is, ostringstream& os)
 
 	}
 
+	if (getsName != name)
+	{
+		os << "There is an Error\n";
+	}
+
+	return 0;
 }
