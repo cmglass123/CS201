@@ -5,14 +5,10 @@ Complex::Complex() :_real(), _imag()
 {}
 
 Complex::Complex(double real) : _real(real), _imag(0)
-{
-
-}
+{}
 
 Complex::Complex(double real, double imag) : _real(real), _imag(imag)
-{
-
-}
+{}
 
 Complex::~Complex()
 {}
