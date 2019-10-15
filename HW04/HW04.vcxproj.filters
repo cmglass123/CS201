@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HW2 New.cpp">
+    <ClCompile Include="HW04.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
