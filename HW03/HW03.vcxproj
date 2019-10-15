@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="box.cpp" />
     <ClCompile Include="boxtest2.cpp" />
     <ClCompile Include="HW03.cpp" />
   </ItemGroup>
