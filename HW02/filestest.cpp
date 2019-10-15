@@ -174,7 +174,7 @@ private:
 
 // test_getIdFromFile
 // Test suite for getIdFromFile
-void test_getIdFromFile(Tester & t)
+void test_getIdfromFile(Tester & t)
 {
    std::cout << "TESTS FOR getIdFromFile" << std::endl;
    std::cout << "Tests with file having final newline:" << std::endl;
@@ -318,7 +318,7 @@ t.test(os.str() == exOut.str(), "numberChase output, longer example, jumps aroun
 int main()
 {
     Tester t;
-    test_getIdFromFile(t);
+    test_getIdfromFile(t);
     test_numberChase(t);
 
     std::cout << std::endl;

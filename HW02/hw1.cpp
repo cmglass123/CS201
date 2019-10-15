@@ -1,4 +1,4 @@
-
+#include "hw1.h"
 #include <iomanip>
 #include <ios>
 #include <iostream>
@@ -34,15 +34,15 @@ int getIdfromFile(const string & fileName , istringstream & is, ostringstream & 
 	while (getline(input, line))
 	{
 		istringstream rows(line);
-		is >> name;
+		is >> getsName;
 
 		int numbers;
-		getline(rows, getsName, ' ');
+		getline(rows, name, ' ');
 
-		if (getsName == name)
+		if (name == getsName)
 		{
 			rows >> numbers;
-			os << numbers;
+			os << numbers << endl;
 			break;
 		}
 
@@ -50,7 +50,7 @@ int getIdfromFile(const string & fileName , istringstream & is, ostringstream & 
 
 	if (getsName != name)
 	{
-		os << "There is an Error\n";
+		os << "error" << endl;
 	}
 
 	return 0;
