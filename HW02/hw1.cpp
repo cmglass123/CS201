@@ -46,7 +46,7 @@ int getIdfromFile(const string & fileName , istringstream & is, ostringstream & 
 			break;
 		}
 
-	}
+	} 
 
 	if (getsName != name)
 	{
