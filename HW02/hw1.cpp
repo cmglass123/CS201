@@ -16,7 +16,7 @@ using std::ifstream;
 using std::ofstream;
 using std::getline;
 
-int getIdfromFile(const string & fileName , istringstream & is, ostringstream & os)
+int getIdfromFile(const string & fileName , istringstream& is, ostringstream& os)
 {
 	ifstream input;
 
@@ -48,7 +48,7 @@ int getIdfromFile(const string & fileName , istringstream & is, ostringstream & 
 
 	} 
 
-	if (getsName != name)
+	if (name != getsName)
 	{
 		os << "error" << endl;
 	}

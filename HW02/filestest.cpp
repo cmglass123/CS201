@@ -8,7 +8,6 @@
 // Includes for code to be tested
 #include "hw1.h"
 #include "hw1.h" // Double inclusion test
-//#include "hw1.cpp"
 
 // Includes for testing package & code common to all test programs
 #include <iostream>     // for std::cout, std::endl, std::cin
