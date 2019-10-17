@@ -15,6 +15,8 @@ public:
 	int getHight() const;
 	int getWidth() const;
 
+
+
 	void setHight(int h);
 	void setWidth(int w);
 
