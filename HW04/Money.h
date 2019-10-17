@@ -8,7 +8,11 @@ public:
 	Money();
 	~Money();
 
-	
+	int getDollars() const;
+	int getCents() const;
+
+	void setDollars();
+	void setCents();
 
 private:
 	int _dollars;
