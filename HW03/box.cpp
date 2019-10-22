@@ -29,6 +29,16 @@ int Box::getWidth() const
 	return _width;
 }
 
+void Box::setHight(int h)
+{
+	_hight = h;
+}
+
+void Box::setWidth(int w)
+{
+	_width = w;
+}
+
 void Box::print(std::ostringstream& os) const
 {
 	if (_isFilled)
