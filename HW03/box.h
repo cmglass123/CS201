@@ -12,12 +12,12 @@ public:
 	Box(int w, int h);
 	Box(int w, int h, bool filled);
 
-	int getHight() const;
+	int getHeight() const;
 	int getWidth() const;
 
+	std::string type() const;
 
-
-	void setHight(int h);
+	void setHeight(int h);
 	void setWidth(int w);
 
 	void print(std::ostringstream& os) const;

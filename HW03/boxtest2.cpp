@@ -7,8 +7,8 @@
 // Updated 10/5/2017
 
 // Includes for code to be tested
-#include "box.h"   // For class Box
-#include "box.h"   // Double inclusion test
+#include "box.h" // For class Box
+#include "box.h" // Double inclusion test
 
 // Includes for testing package & code common to all test programs
 #include <iostream>     // for std::cout, std::endl, std::cin

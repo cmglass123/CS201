@@ -19,7 +19,7 @@ Box::Box(int w, int h, bool filled)
 	filled = _isFilled;
 }
 
-int Box::getHight() const
+int Box::getHeight() const
 {
 	return _hight;
 }
@@ -29,7 +29,19 @@ int Box::getWidth() const
 	return _width;
 }
 
-void Box::setHight(int h)
+std::string Box::type() const
+{
+	if (_isFilled)
+	{
+		return "Filled";
+	}
+	else
+	{
+		return "Hollow";
+	}
+}
+
+void Box::setHeight(int h)
 {
 	_hight = h;
 }
