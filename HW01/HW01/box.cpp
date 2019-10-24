@@ -1,31 +1,118 @@
-/*
-Christopher Glass
-9/18/2019
-box.cpp file for homework #1
-*/
-
+#include "box.h"
+#include<iomanip>
 #include <iostream>
-#include "box.hpp"
 using std::cout;
 
-Box::Box()
+Box::Box() {}
+
+Box::Box(int w, int h)
 {
-	cout << "the box is being made\n";
+	w = _width;
+	h = _hight;
+	_isFilled;
 }
 
-void Box::theLength(int l)// the int is a lowcase L it just looks like the number 1
+Box::Box(int w, int h, bool filled)
 {
-	length = l;
+	w = _width;
+	h = _hight;
+	filled = _isFilled;
 }
 
-void Box::theWidth(int w)
+int Box::getHeight() const
 {
-	width = w;
+	return _hight;
 }
 
-int Box::area()
+int Box::getWidth() const
 {
-	int a;
-	a = length * width;
-	return a;
+	return _width;
+}
+
+std::string Box::type() const
+{
+	if (_isFilled)
+	{
+		return "Filled";
+	}
+	else
+	{
+		return "Hollow";
+	}
+}
+
+void Box::setHeight(int h)
+{
+	_hight = h;
+}
+
+void Box::setWidth(int w)
+{
+	_width = w;
+}
+
+void Box::print(std::ostringstream& os) const
+{
+	if (_isFilled)
+	{
+		for (int rows = 1; rows <= _hight; rows++)
+		{
+			for (int column = 1; column <= _width; column++)
+			{
+				os << "x";
+			}
+			os << std::endl;
+		}
+	}
+	else
+	{
+		for (int rows = 1; rows <= _hight; rows++)
+		{
+			for (int column = 1; column <= _width; column++)
+			{
+				if (rows == 1 | column == 1 | column == _width | rows == _hight)
+				{
+					os << "x";
+				}
+				else
+				{
+					os << " ";
+				}
+			}
+			os << std::endl;
+		}
+	}
+}
+
+void Box::print()
+{
+	if (_isFilled)
+	{
+		for (int rows = 1; rows <= _hight; rows++)
+		{
+			for (int column = 1; column <= _width; column++)
+			{
+				std::cout << "x";
+			}
+			std::cout << std::endl;
+		}
+	}
+	else
+	{
+		for (int rows = 1; rows <= _hight; rows++)
+		{
+			for (int column = 1; column <= _width; column++)
+			{
+				if (rows == 1 | column == 1 | column == _width | rows == _hight)
+				{
+					std::cout << "x";
+				}
+				else
+				{
+					std::cout << " ";
+				}
+			}
+			std::cout << std::endl;
+		}
+	}
 }
