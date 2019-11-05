@@ -37,7 +37,8 @@ protected:
 
 class Derived : public Person
 {
-	
+public:
+
 };
 
 
