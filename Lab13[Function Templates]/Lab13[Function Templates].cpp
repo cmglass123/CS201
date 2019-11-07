@@ -9,5 +9,5 @@ int main()
 	twice(2);
 	twice(2.3);
 	twice(std::string("hello"));
-
+	twice("World");
 }
