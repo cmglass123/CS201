@@ -2,27 +2,25 @@
 #define WRAPPER_HPP
 #include<iostream>
 
-template <typename Wrap>
+template <typename T>
 class Wrapper
 {
 	template <typename U>
 	friend std::ostream& operator<<(std::ostream&, const Wrapper<U>&);
 public:
-	Wrapper(const Wrap& one, const Wrap& two);
+	Wrapper(const T& one);
 private:
-	Wrap _num;
-	Wrap _word;
+	T _num;
 };
 
-template <typename Wrap>
-Wrapper<Wrap>::Wrapper(const Wrap& one, const Wrap& two) :_num(one), _word(two)
+template <typename T>
+Wrapper<T>::Wrapper(const T& one) :_num(one)
 {}
 
 template <typename U>
 std::ostream& operator<<(std::ostream& os, const Wrapper<U>& to)
 {
-	os << to._num << " " << to._word;
-	return os;
+	return os << to._num;
 }
 
 #endif // !WRAPPER_HPP
