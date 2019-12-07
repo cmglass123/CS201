@@ -35,6 +35,11 @@ private:
 template<typename T>
 RAIIPtr<T>::RAIIPtr(const T* val) :_val(val) {}
 
+template<typename A>
+RAIIPtr<A>& operator*(const A& val)
+{
+	return val;
+}
 
 
 #endif // !PRINTVECTORANDRAIIPTR_HPP_
