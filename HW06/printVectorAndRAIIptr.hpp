@@ -32,5 +32,9 @@ private:
 	T* _val;
 };
 
+template<typename T>
+RAIIPtr<T>::RAIIPtr(const T* val) :_val(val) {}
+
+
 
 #endif // !PRINTVECTORANDRAIIPTR_HPP_
