@@ -19,6 +19,18 @@ void printVector(ostringstream& os, vector<pV> t)
 	}
 }
 
+template<typename T>
+class RAIIPtr
+{
+public:
+	RAIIPtr(const T* val);
+	RAIIPtr* operator -> ()const
+	{
+		return RAIIPtr;
+	}
+private:
+	T* _val;
+};
 
 
 #endif // !PRINTVECTORANDRAIIPTR_HPP_
